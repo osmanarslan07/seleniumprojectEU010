@@ -6,12 +6,16 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class T1_CydeoVerifications {
 
+    /*
+    IN THIS CLASS WE ARE SOLVING THE DAY02_TASK1
+     */
+
+
     public static void main(String[] args) {
 
         //TC #1: Cydeo practice tool verifications
-        WebDriverManager.chromedriver().setup();
-
         //1. Open Chrome browser
+        WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
