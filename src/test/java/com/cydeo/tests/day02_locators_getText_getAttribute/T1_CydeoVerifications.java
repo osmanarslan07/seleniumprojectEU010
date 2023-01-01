@@ -41,7 +41,7 @@ public class T1_CydeoVerifications {
             System.out.println("Actual Title is NOT the same with Expected Title. Test FAILED!");
         }
 
-        driver.quit();
+        driver.close();
 
 
 
