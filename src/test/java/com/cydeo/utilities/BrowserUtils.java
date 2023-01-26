@@ -25,6 +25,13 @@ public class BrowserUtils {
         }
     }
 
+    /*
+    This method accepts 3 arguments.
+    Arg1: webdriver
+    Arg2: expectedUrl : for verify if the url contains given String.
+        -If condition matches, will break the loop.
+    Arg3: expectedInTitle to be compared against actualTitle
+     */
     public static void switchWindowAndVerify(WebDriver driver, String expectedInUrl, String expectedInTitle){
         Set<String> allWindowHandles = driver.getWindowHandles();
 
@@ -41,10 +48,16 @@ public class BrowserUtils {
 
         //5. Assert: Title contains “Etsy”
         String actualTitle = driver.getTitle();
-
-
         Assert.assertTrue(actualTitle.contains(expectedInTitle));
     }
+
+    /*
+    This method accepts a String "expectedTitle" and Asserts if it is true
+     */
+    public static void verifyTitle(WebDriver driver, String expectedTitle){
+        Assert.assertEquals(driver.getTitle(),expectedTitle);
+    }
+
 
 
 
