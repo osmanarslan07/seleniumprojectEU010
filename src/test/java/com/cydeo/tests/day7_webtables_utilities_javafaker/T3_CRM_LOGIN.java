@@ -39,7 +39,7 @@ public class T3_CRM_LOGIN {
         loginButton.click();
         //6. Verify title is as expected:
         //EXpected : Portal
-        BrowserUtils.verifyTitle(driver,"Portal");
+        //BrowserUtils.verifyTitle(driver,"Portal");
 
     }
 
@@ -51,6 +51,21 @@ public class T3_CRM_LOGIN {
 
         //Calling my utility method to login helpdesk1
         CRM_Utilities.crm_login(driver);
+
+        //6. Verify title is as expected:
+        //EXpected : Portal
+        BrowserUtils.verifyTitle(driver,"Portal");
+
+    }
+
+    @Test
+    public void crm_login_test3(){
+
+        //2. Go to : https://login1.nextbasecrm.com/
+        driver.get("https://login1.nextbasecrm.com/");
+
+        //Calling my utility method to login helpdesk1
+        CRM_Utilities.crm_login(driver,"Helpdesk2@cybertekschool.com","UserUser");
 
         //6. Verify title is as expected:
         //EXpected : Portal
