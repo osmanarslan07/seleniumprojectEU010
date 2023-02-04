@@ -24,7 +24,7 @@ public class T1_JavaFaker_Practice {
 
         //4. Enter last name
         WebElement lastNameBox = driver.findElement(By.xpath("//input[@name='lastname']"));
-        lastNameBox.sendKeys(faker.name().lastName());
+        lastNameBox.sendKeys(faker.name().lastName().replaceAll("\'",""));
 
         //5. Enter username
         WebElement userNameBox = driver.findElement(By.xpath("//input[@name='username']"));
@@ -74,6 +74,7 @@ public class T1_JavaFaker_Practice {
         String actualMessage = "You've successfully completed registration!";
 
         Assert.assertEquals(successMessage.getText(),actualMessage);
+
 
 
 
