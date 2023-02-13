@@ -1,4 +1,4 @@
-package com.cydeo.tests.day12_pom_design_explicit_wait;
+package com.cydeo.pages;
 
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.WebElement;
