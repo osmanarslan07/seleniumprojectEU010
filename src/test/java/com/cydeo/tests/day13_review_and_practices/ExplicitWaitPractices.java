@@ -5,6 +5,7 @@ import com.cydeo.utilities.BrowserUtils;
 import com.cydeo.utilities.Driver;
 import org.openqa.selenium.NoSuchElementException;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -17,6 +18,11 @@ public class ExplicitWaitPractices {
         Driver.getDriver().get("https://practice.cydeo.com/dynamic_controls");
         dynamicControlsPage = new DynamicControlsPage();
 
+    }
+
+    @AfterMethod
+    public void tearDownMethod(){
+        Driver.closeDriver();
     }
 
     @Test
@@ -44,6 +50,7 @@ public class ExplicitWaitPractices {
 
         //b. “It’s gone!” message is displayed.
         Assert.assertTrue(dynamicControlsPage.message.isDisplayed());
+        Assert.assertTrue(dynamicControlsPage.message.getText().equals("It\'s gone!"));
 
 
 
@@ -67,6 +74,7 @@ public class ExplicitWaitPractices {
         Assert.assertTrue(dynamicControlsPage.inputBox.isEnabled());
         //b. “It’s enabled!” message is displayed.
         Assert.assertTrue(dynamicControlsPage.message.isDisplayed());
+        Assert.assertTrue(dynamicControlsPage.message.getText().equals("It\'s enabled!"));
 
 
     }
